@@ -10,13 +10,13 @@ pos_cgenff.py - Use after generating '.str' on CGenff site - Script searches for
 
 -> Topology Complex 
 
-Complex.py - The script joins prot.gro with lig.gro (or lig and cof) keeps the box_vector of prot and changes the total number of molecules at the beginning of the file.
+Complex.py - The script merge prot.gro with lig.gro (or lig and cof) keeps the box_vector of prot and changes the total number of molecules at the beginning of the file.
 
 Syntax -> python3 complex.py prot.gro lig.gro
+
           python3 complex.py prot.gro lig.gro cof.gro
 
-remove_SOL.py - Input = solv_ions.gro - remove the SOL from the file and change the final number of molecules and return prot_ions.gro.
-
+remove_SOL.py - For gas-phase simulations, input solv_ions.gro and the script remove SOL from the file, change the final number of molecules and return prot_ions.gro.
 
 
 -> Topols
