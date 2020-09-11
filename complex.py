@@ -1,4 +1,4 @@
-#Argumentos
+#Arguments
 import sys
 
 prot = sys.argv[1]
