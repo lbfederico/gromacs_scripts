@@ -9,19 +9,19 @@ else:
     cof = sys.argv[3]
 
 
-    # Abre arquivo e lê prot
+    # Open and read protein file
     file = open(str(prot), 'r')
     prot = file.readlines()
 
-    #Criar complex, parte1 -> prot sem box vector (only_prot)
+    #Build complex, Part1 -> prot without box vector (only_prot)
     file = open('complex.gro', 'a+')
     only_prot = prot[2:-1]
     file.writelines([item for item in only_prot])
     box_vector = prot[-1]
     file.close()
 
-    #incluir ligante sem cabeçalho nem box vector -> incluir box vector
-    #Abre arquivo e lê lig e complex
+    #Add ligand without title and box vector -> add box vector
+    #Open and read lig and complex
     file = open(str(lig), 'r')
     lig = file.readlines()
     lig_only = lig[2:-1]
@@ -36,13 +36,13 @@ else:
     file.writelines([item for item in box_vector])
     file.close()
 
-    #Verificar o numero de linhas (cont) e a linha2 - como esta sem cabeçalho o numero de moleculas é cont -1
+    #Check number of lines (cont) and line2 - as this one without title the number of molecules is cont -1
     file = open('complex.gro', 'r')
     line = file.readlines()
     cont = len(line)
     file.close()
 
-    #Substituir o numero de linhas e o nome inicial
+    #Replace number of lines and title
     file = open('complex.gro', 'w')
     file.write('complex' + '\n')
     file.write(str(cont -1)+ '\n')
