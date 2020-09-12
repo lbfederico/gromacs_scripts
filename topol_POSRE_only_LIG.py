@@ -5,6 +5,8 @@ def get_line(txt):
     for line_num, value in enumerate(file, 1): 
         if txt in value:                       
             return line_num
+        
+        
 if len(sys.argv) < 2:
     print('ERROR: put lig name without extension')
 
@@ -12,10 +14,7 @@ elif len(sys.argv) > 2:
     print('ERROR: put only lig name without extension')
 
 else:
-  
     lig = sys.argv[1]
-
-    
     x = str('; Include water topology')
     y = str(f'; Ligand position restraints\n'
             f'#ifdef POSRES\n'
