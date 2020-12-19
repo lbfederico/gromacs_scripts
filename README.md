@@ -3,9 +3,13 @@ Simple scripts for automating some steps of Justin A. Lemkul's tutorial for GMX.
 
 -> Topology Ligands
 
-fix.py - Searches for '.mol2' files and run the script 'sort_mol2_bonds.pl' generating the '_fix.mol2'.
+          python3 fix.py 
+          
+- Searches for '.mol2' files and run the script 'sort_mol2_bonds.pl' generating the '_fix.mol2'.
 
-pos_cgenff.py - Use after generating '.str' on CGenff site - Script searches for '_fix.mol2' and '.str' runs the 'cgenff_charmm2gmx_py3.py' script to generate the '_ini.pdb' used in the sequence by 'editconf' to generate '.gro
+          python3 pos_cgenff.py
+
+- Use after generating '.str' on CGenff site - Script searches for '_fix.mol2' and '.str' runs the 'cgenff_charmm2gmx_py3.py' script to generate the '_ini.pdb' used in the sequence by 'editconf' to generate '.gro
 
 
 -> Topology Complex 
@@ -28,7 +32,7 @@ Depending on topol_ it includes ligand parameters , ligand topology and molecule
 
 -> Analises_gmx
 
-python3 analises_gmx.py <sv_aal or sv_trj or gp_trj>
+          python3 analises_gmx.py <sv_aal or sv_trj or gp_trj>
 
 Obtains only the "center" and/or "fit" trajectory for solvent or gas-phase complexes (pcouple = no, only nvt equilibrium) with sv_trj and gp_trj or sv_all = RMSD, RMSF, SASA, Gyrate.
 
