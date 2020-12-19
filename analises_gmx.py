@@ -32,7 +32,7 @@ elif sys.argv[1] == str('sv_all'):
         os.system(cmd4)
         os.system(cmd5)
         os.system(cmd6)
-        os.chdir(os.path.join('../../')) #move to two directories below (I put my results in results>gp>ligand1 and script file is in results)
+        os.chdir(os.path.join('../')) #move to directory below 
 
 elif sys.argv[1] == str('sv_trj'):
     for x in d:
@@ -40,7 +40,7 @@ elif sys.argv[1] == str('sv_trj'):
         os.chdir(path)
         os.system(cmd1)
         os.system(cmd2)
-        os.chdir(os.path.join('../../'))
+        os.chdir(os.path.join('../'))
 
 elif sys.argv[1] == str('gp_trj'):
     for x in d:
@@ -48,7 +48,7 @@ elif sys.argv[1] == str('gp_trj'):
         os.chdir(path)
         os.system(cmd1_gp)
         os.system(cmd2_gp)
-        os.chdir(os.path.join('../../'))
+        os.chdir(os.path.join('../'))
 
 else:
     print('ERROR: put sv_all, sv_trj or gp_trj')
