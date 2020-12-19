@@ -26,3 +26,8 @@ remove_SOL.py - For gas-phase simulations, input solv_ions.gro and the script re
 
 Depending on topol_ it includes ligand parameters , ligand topology and molecules at the end of the file or position restraints 
 
+-> Analises_gmx
+
+Obtains only the "center" and/or "fit" trajectory for solvent or gas-phase complexes (pcouple = no, only nvt equilibrium) with sv_trj and gp_trj or sv_all = RMSD, RMSF, SASA, Gyrate.
+
+Changing the name of the .tpr in "cmd"
