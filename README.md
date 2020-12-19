@@ -28,6 +28,9 @@ Depending on topol_ it includes ligand parameters , ligand topology and molecule
 
 -> Analises_gmx
 
+python3 <sv_aal or sv_trj or gp_trj>
+
+
 Obtains only the "center" and/or "fit" trajectory for solvent or gas-phase complexes (pcouple = no, only nvt equilibrium) with sv_trj and gp_trj or sv_all = RMSD, RMSF, SASA, Gyrate.
 
 Changing the name of the .tpr in "cmd"
