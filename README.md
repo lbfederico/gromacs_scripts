@@ -37,3 +37,12 @@ Depending on topol_ it includes ligand parameters , ligand topology and molecule
 Obtains only the "center" and/or "fit" trajectory for solvent or gas-phase complexes (pcouple = no, only nvt equilibrium) with sv_trj and gp_trj or sv_all = RMSD, RMSF, SASA, Gyrate.
 
 Changing the name of the .tpr in "cmd"
+
+
+-> LigPreparationGMX
+
+Automates the preparation of ligand. Download script sort_mol2_bonds.pl and cgenff_charmm2gmx.py for use this.
+Putting the script in the directory with ligands in .mol2.
+It perform the script sort_mol2_bonds.pl obtain fix.mol2 obtain the .str file from CGenFF website runs the script cgenff_charmm2gmx and generates the .gro file by editconf.
+Finally creates directories for the results of each ligand.
+
