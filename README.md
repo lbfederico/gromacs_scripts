@@ -11,6 +11,14 @@ Simple scripts for automating some steps of Justin A. Lemkul's tutorial for GMX.
 
 - Use after generating '.str' on CGenff site - Script searches for '_fix.mol2' and '.str' runs the 'cgenff_charmm2gmx_py3.py' script to generate the '_ini.pdb' used in the sequence by 'editconf' to generate '.gro
 
+-> LigPreparationGMX
+
+- The three steps above in only one.
+- Automates the preparation of ligand. Download script sort_mol2_bonds.pl and cgenff_charmm2gmx.py for use this.
+- Putting the script in the directory with ligands in .mol2.
+- It perform the script sort_mol2_bonds.pl obtain fix.mol2 obtain the .str file from CGenFF website runs the script cgenff_charmm2gmx and generates the .gro file by editconf.
+- Finally creates directories for the results of each ligand.
+
 
 -> Topology Complex 
 
@@ -39,10 +47,4 @@ Obtains only the "center" and/or "fit" trajectory for solvent or gas-phase compl
 Changing the name of the .tpr in "cmd"
 
 
--> LigPreparationGMX
-
-Automates the preparation of ligand. Download script sort_mol2_bonds.pl and cgenff_charmm2gmx.py for use this.
-Putting the script in the directory with ligands in .mol2.
-It perform the script sort_mol2_bonds.pl obtain fix.mol2 obtain the .str file from CGenFF website runs the script cgenff_charmm2gmx and generates the .gro file by editconf.
-Finally creates directories for the results of each ligand.
 
