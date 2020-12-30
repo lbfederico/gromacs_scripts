@@ -1,6 +1,9 @@
 # gmx_scripts(Gromacs)
 Simple scripts for automating some steps of Justin A. Lemkul's tutorial for Gromacs. Useful mainly for simulations with large series of ligands.
 
+
+### Step_by_Step Folder ###
+
 -> Topology Ligands
 
           python3 fix.py 
