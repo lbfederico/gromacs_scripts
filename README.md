@@ -66,7 +66,7 @@ Simple scripts for automating some steps of Justin A. Lemkul's tutorial for Grom
 - It perform the script sort_mol2_bonds.pl obtain fix.mol2 obtain the .str file from CGenFF website runs the script cgenff_charmm2gmx and generates the .gro file by editconf.
 - Finally creates directories for the results of each ligand.
 
-          python3 LigPreparationGMX.py
+          python3 lig_preparation_gmx.py
 
 
 
@@ -75,7 +75,7 @@ Simple scripts for automating some steps of Justin A. Lemkul's tutorial for Grom
 - This script must be run in the directory under analysis. It creates the complex.gro file and makes adjustments to topol.top. Used for protein and ligand or protein ligand and cofactor.
 - Extensions MUST be added.
 
-          python3 complex.py prot_name lig_name lig_name cof_name
+          python3 complex.py prot_name lig_name cof_name
 
 
 
