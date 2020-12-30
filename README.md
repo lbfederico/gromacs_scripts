@@ -12,7 +12,7 @@ Simple scripts for automating some steps of Justin A. Lemkul's tutorial for Grom
           python3 fix.py 
           
 *pos_cgenff.py
-- Use after generating '.str' on CGenff site - Script searches for '_fix.mol2' and '.str' runs the 'cgenff_charmm2gmx_py3.py' script to generate the '_ini.pdb' used in the sequence by 'editconf' to generate '.gro
+- Use after generating '.str' on CGenff site - Script searches for '_fix.mol2' and '.str' runs the 'cgenff_charmm2gmx_py3.py' script to generate the '_ini.pdb' used in the sequence by 'editconf' to generate '.gro'
 
           python3 pos_cgenff.py
 
@@ -20,7 +20,7 @@ Simple scripts for automating some steps of Justin A. Lemkul's tutorial for Grom
 
 -> Topology Complex 
 
-*complex.py 
+*complex.py and complex_lig_cof
 - The script merge prot.gro with lig.gro (or lig and cof) keeps the box_vector of prot and changes the total number of molecules at the beginning of the file.
 
           python3 complex.py prot.gro lig.gro
