@@ -38,6 +38,14 @@ remove_SOL.py - For gas-phase simulations, input solv_ions.gro and the script re
 
 Depending on topol_ it includes ligand parameters , ligand topology and molecules at the end of the file or position restraints 
 
+-> Complex + Topol
+
+This script must be run in the directory under analysis. It creates the complex.gro file and makes adjustments to topol.top. Used for protein and ligand or protein ligand and cofactor
+
+          python3.9 complex.py prot_name lig_name lig_name cof_name
+
+Extensions MUST be added.
+
 -> Analises_gmx
 
           python3 analises_gmx.py <sv_all or sv_trj or gp_trj>
