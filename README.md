@@ -21,7 +21,7 @@ Simple scripts for automating some steps of Justin A. Lemkul's tutorial for Grom
 -> Topology Complex 
 
 *complex.py and complex_lig_cof
-- The script merge prot.gro with lig.gro (or lig and cof) keeps the box_vector of prot and changes the total number of molecules at the beginning of the file.
+- The script create complex.gro file it is merge prot.gro with lig.gro (or lig and cof) keeps the box_vector of prot and changes the total number of molecules at the beginning of the file.
 
           python3 complex.py prot.gro lig.gro
 
