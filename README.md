@@ -28,18 +28,18 @@ Simple scripts for automating some steps of Justin A. Lemkul's tutorial for Grom
           python3 complex.py prot.gro lig.gro cof.gro
           
 *topol_lig.py and topol_lig_cof.py
-- Depending on topol_ it includes ligand parameters , ligand topology and molecules at the end of the file or position restraints 
+- Depending on topol_ it includes in topol.top file: ligand parameters, ligand topology and molecules at the end of the file. 
 
           python3 topol_lig.py lig 
           python3 topol_lig_cof.py lig cof
           (do not put extension)
           
-*topol_POSRE_lig.py and tpol_POSRE_lig_cof.py
+*topol_POSRES_lig.py and tpol_POSRES_lig_cof.py
 - Restraining the Ligand Step - Include the position restraint topology information in our topology file.
 - Restrain only ligand whenever but if you want a bit more control during equilibration, i.e. restraining the protein and ligand independently, change #ifdef POSRES to #ifdef POSRES_LIG in script file
           
-          python3 topol_POSRE_lig.py
-          python3 topol_POSRE_lig_cof.py
+          python3 topol_POSRES_lig.py
+          python3 topol_POSRES_lig_cof.py
  
  
           
@@ -48,8 +48,6 @@ Simple scripts for automating some steps of Justin A. Lemkul's tutorial for Grom
 - For gas-phase simulations, input solv_ions.gro and the script remove SOL from the file, change the final number of molecules and return prot_ions.gro.
           
           python3 remove_SOL.py
-
-
 
 
 ### Merged_Steps Folder ###
