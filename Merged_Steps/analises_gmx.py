@@ -39,7 +39,7 @@ cmd2_gp = ('echo 4 0 |'
            ' -fit rot+trans'
            )
 
-cmd3_sv = ('echo 1 1 |'
+cmd3_sv = ('echo 4 4 |'
            'gmx rms'
            ' -s md_sv_mdh.tpr'
            ' -f md_fit.xtc '
@@ -47,7 +47,7 @@ cmd3_sv = ('echo 1 1 |'
            ' -tu ns'
            )
 
-cmd4_sv = ('echo 1 1 |'
+cmd4_sv = ('echo 4 4 |'
            ' gmx rmsf '
            '-s md_sv_mdh.tpr'
            ' -f md_fit.xtc'
@@ -68,6 +68,14 @@ cmd6_sv = ('echo 1 |'
            ' -f md_fit.xtc'
            ' -o gyrate.xvg'
            )
+
+cmd7_sv = ('echo COLOCAR NUMERO LIGANTE |'
+        'gmx rms'
+        ' -s md_sv_mdh.tpr'
+        ' -f md_fit.xtc '
+        '-o rmsd.xvg'
+        ' -tu ns'
+         )
 
 only_directories = list(filter(os.path.isdir, os.listdir()))
 
@@ -102,7 +110,7 @@ elif sys.argv[1] == '-h':
 
 
 elif sys.argv[1] == str('sv_all'):
-    x = (cmd1_sv, cmd2_sv, cmd3_sv, cmd4_sv, cmd5_sv, cmd6_sv)
+    x = (cmd1_sv, cmd2_sv, cmd3_sv, cmd4_sv, cmd5_sv, cmd6_sv, cmd7_sv)
     RunAnalysis(x)
 
 elif sys.argv[1] == str('sv_trj'):
