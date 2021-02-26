@@ -82,7 +82,7 @@ elif len(sys.argv) == 3:
 
     x = str('#include "./charmm36-mar2019.ff/forcefield.itp"')
     y = str('; Include Position restraint file')
-    z = str('Protein             1')
+    z = str('#mols')
     
 
 
@@ -100,7 +100,7 @@ elif len(sys.argv) == 3:
 
     file = open('topol.top', 'r+', encoding='utf8')
     line = file.readlines()
-    line.insert(get_line(z), f'\n{lig2}                 1\n')
+    line.insert(get_line(z) + 2, f'\n{lig2}                 1\n')
     file.seek(0)
     file.writelines(line)
 
@@ -160,7 +160,7 @@ elif len(sys.argv) == 4:
 
     x = str('#include "./charmm36-mar2019.ff/forcefield.itp"')
     y = str('; Include Position restraint file')
-    z = str('Protein             1')
+    z = str('#mols')
 
     # Abrir o topol.top -> Ler as linhas a add o argumento .prm
     file = open('topol.top', 'r+', encoding='utf8')
@@ -178,6 +178,6 @@ elif len(sys.argv) == 4:
     # Abrir o topol.top -> Ler as linhas a add o argumento numero de moleculas finais
     file = open('topol.top', 'r+', encoding='utf8')
     line = file.readlines()
-    line.insert(get_line(z), f'\n{lig2}                 1\n{cof2}                 1\n')
+    line.insert(get_line(z) + 2, f'\n{lig2}                 1\n{cof2}                 1\n')
     file.seek(0)
     file.writelines(line)
