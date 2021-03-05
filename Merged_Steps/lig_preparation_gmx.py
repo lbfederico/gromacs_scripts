@@ -3,10 +3,11 @@ from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
-import argparse
 import os
 import shutil
 import time
+import argparse
+import textwrap
 
 #def para procurar os _fix.mol2 e os todos os arqivos de cada ligante (Ls)
 
@@ -18,13 +19,18 @@ def FindFilesStart(path, prefix):
     filenames = os.listdir(path)
     return [filename for filename in filenames if filename.startswith(prefix)]
 
-parser = argparse.ArgumentParser(description='Automatiza o preparo de ligantes'
-                                             'baixar o script sort_mol2_bonds.pl e cgenff_charmm2gmx.py'
-                                             'Colocar o script no diretorio dos ligantes'
-                                             'execut o script sort_mol2_bonds.pl obtem o arquivo .str do site CGenFF'
-                                             'executa o script cgenff_charmm2gmx e gera o arquivo .gro pelo editconf')
+ 
+parser = argparse.ArgumentParser(formatter_class=argparse.RawDescriptionHelpFormatter,
+                                 description=textwrap.dedent('''\
+                                             Utilizar Python3. Script utilizado para automatizar o tratamento dos ligantes
+                                             Entrada em .mol2 utiliza o Script Perl para correcao das moleculas e gerar _fix.mol2
+                                             Entra no site CGenFF, cria o arquivo .srt e converte com o script cgenff_charmm2gmx
+                                             Utiliza o gmx editiconf para criar o .gro
+                                             salva todos os resltados para cada ligante em respectivos diretorios criados
+                                             '''))
 
 args = parser.parse_args()
+
 
 lista_molecMol2 = FindFilesEnd(os.path.join(os.getcwd()), '.mol2')
 
@@ -40,15 +46,15 @@ FixMol2 = FindFilesEnd(os.path.join(os.getcwd()), '_fix.mol2')
 
 #Abrir pagina CGenFF
 browser = webdriver.Chrome()
-browser.get('https://cgenff.umaryland.edu/userAccount/userLogin.php')
+browser.get("https://cgenff.umaryland.edu/userAccount/userLogin.php")
 element = EC.visibility_of_element_located((By.ID, 'username'))
 assert 'User' in browser.title #confirmar se a pag foi aberta
 
 #login
 username = browser.find_element_by_name('usrName')
 password = browser.find_element_by_name('curPwd')
-username.send_keys('LOGIN')
-password.send_keys('PASSWORD')
+username.send_keys("leolcqf")
+password.send_keys("lc2qf6usp#")
 #password.send_keys(Keys.RETURN)
 
 #clicar no botão submit
