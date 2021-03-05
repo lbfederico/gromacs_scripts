@@ -1,5 +1,6 @@
 import sys
 import argparse
+import textwrap
 
 
 #Função para encontrar numero da linha que contém o argumemnto desejado
@@ -10,17 +11,17 @@ def get_line(txt):
             return line_num
 
 
-
-
-
 if len(sys.argv) == 2 and sys.argv[1] == '-h':
-    
 
-    parser = argparse.ArgumentParser(description= 'Este script deve ser rodado no diretorio em analise\n'
-                                                  'Ele cria o arquivo complex.gro e faz as adequações ao topol.top\n'
-                                                  'Usado para proteina e ligante ou proteina ligante e cofator\n'
-                                                  'sintaxe -> python3.9 complex.py prot_name lig_name cof_name\n'
-                                                  'as extensoes DEVEM ser adicionadas ao comando')
+
+    parser = argparse.ArgumentParser(formatter_class=argparse.RawDescriptionHelpFormatter,
+                                     description=textwrap.dedent('''\
+                                          Este script deve ser rodado no diretorio em analise
+                                          Ele cria o arquivo complex.gro e faz as adequações ao topol.top
+                                          Usado para proteina e ligante ou proteina ligante e cofator
+                                          sintaxe -> python3.9 complex.py prot_name lig_name cof_name
+                                          as extensoes DEVEM ser adicionadas ao comando
+                                          '''))
 
     args = parser.parse_args()
 
@@ -83,7 +84,7 @@ elif len(sys.argv) == 3:
     x = str('#include "./charmm36-mar2019.ff/forcefield.itp"')
     y = str('; Include Position restraint file')
     z = str('#mols')
-    
+
 
 
     file = open('topol.top', 'r+', encoding='utf8')
@@ -156,7 +157,7 @@ elif len(sys.argv) == 4:
     file.close()
 
 #-----------------------------------------------------------------
-    
+
 
     x = str('#include "./charmm36-mar2019.ff/forcefield.itp"')
     y = str('; Include Position restraint file')
