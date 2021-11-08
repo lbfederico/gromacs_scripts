@@ -53,8 +53,8 @@ assert 'User' in browser.title #confirmar se a pag foi aberta
 #login
 username = browser.find_element_by_name('usrName')
 password = browser.find_element_by_name('curPwd')
-username.send_keys("leolcqf")
-password.send_keys("lc2qf6usp#")
+username.send_keys("******")
+password.send_keys("*******")
 #password.send_keys(Keys.RETURN)
 
 #clicar no botão submit
